@@ -30,8 +30,8 @@ Là Admin, tôi muốn kích hoạt lại thành viên bị ngừng nhầm, đ�
 1. Given thành viên đang Inactive, When tôi khôi phục, Then IsActive() = true và lịch sử đăng ký vẫn được giữ.
 2. Given thành viên đang Active, When tôi khôi phục, Then báo "đã hoạt động" và không có thay đổi nào.
 
-### US-12 · Admin: xem danh sách thành viên đang hoạt động
-Là Admin, tôi muốn lọc ra những thành viên đang hoạt động, để quản lý và dọn dẹp tài khoản.
+### US-12 · Sinh viên: xem lại lịch sử đăng ký và điểm danh của mình
+Là sinh viên, tôi muốn xem các sự kiện mình đã đăng ký, để biết mình đã được xác nhận và đã điểm danh chưa.
 
-1. Given hệ thống có cả thành viên Active và Inactive, When tôi lọc theo Active, Then chỉ thấy thành viên có IsActive() = true.
-2. Given không có thành viên nào Active, When tôi lọc, Then danh sách rỗng.
+1. Given tôi có phiếu đăng ký, When tôi mở lịch sử, Then thấy từng phiếu cùng trạng thái (Pending, Confirmed, Cancelled) và đã check-in hay chưa.
+2. Given tôi chưa đăng ký sự kiện nào, When tôi mở lịch sử, Then danh sách rỗng.
