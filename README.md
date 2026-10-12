@@ -2,7 +2,7 @@
 Họ tên: Sơn Lê Lam · MSSV: 0024418698
 
 ## Cách chạy
-Mở `EduHub.Ch01.sln` bằng Visual Studio, nhấn Ctrl+F5.
+Mở `EduHub.Ch01/EduHub.Ch01.slnx` bằng Visual Studio, nhấn Ctrl+F5.
 
 ## Kết quả
 ![Bước 1–5](docs/demo1.png)
