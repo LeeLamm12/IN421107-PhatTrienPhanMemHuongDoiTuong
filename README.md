@@ -4,7 +4,7 @@ Bài tập môn **Phát triển phần mềm hướng đối tượng**
 
 - **Lớp:** ĐHCNTT24A-IT (IN421107)
 - **Giảng viên:** Nguyễn Tuấn Kiệt
-- **Sinh viên:** SonLeLam - 0024418698 *(thay bằng họ tên đầy đủ)*
+- **Sinh viên:** Sơn Lê Lam - 0024418698
 
 ## Cấu trúc repo
 
