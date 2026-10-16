@@ -1,55 +1,33 @@
 # PTPMHDT-IN421107-DHCNTT24A-IT
 
-Bài tập môn **Phát triển phần mềm hướng đối tượng**
+Repo nộp bài tập môn **Phát triển phần mềm hướng đối tượng** (IN4211), Học kỳ 1 năm học 2026–2027.
 
+- **Trường:** Đại học Đồng Tháp, Khoa Công nghệ và Kỹ thuật
 - **Lớp:** ĐHCNTT24A-IT (IN421107)
-- **Giảng viên:** Nguyễn Tuấn Kiệt
+- **Giảng viên:** ThS. Nguyễn Tuấn Kiệt
 - **Sinh viên:** Sơn Lê Lam - 0024418698
 
-## Cấu trúc repo
+Xuyên suốt các bài tập là hệ thống **EduHub**, quản lý Câu lạc bộ và Sự kiện sinh viên.
 
-Mỗi chương nằm trên một nhánh riêng và được nộp bằng Pull Request vào `main`. Nhánh `main` chỉ chứa README này.
+## Cách tổ chức repo
 
-| Chương | Nhánh | Nội dung | Pull Request |
-|--------|-------|----------|--------------|
-| Ch01 | `ch01/0024418698` | *(điền tóm tắt nội dung Ch01)* | [#1](https://github.com/LeeLamm12/PTPMHDT-IN421107-DHCNTT24A-IT/pull/1) |
-| Ch02 | `ch02/0024418698` | Refactor `ClubManager` theo SOLID và design pattern | [#2](https://github.com/LeeLamm12/PTPMHDT-IN421107-DHCNTT24A-IT/pull/2) |
+- Nhánh `main` chỉ chứa README này và `.gitignore`, không chứa code bài tập.
+- Mỗi chương nằm trên **một nhánh riêng** và được nộp bằng **Pull Request** vào `main`.
+- Commit viết bằng tiếng Anh theo Conventional Commits (`feat:`, `refactor:`, `docs:`, `test:`...).
 
-## Ch02: Refactor SOLID và Design Pattern
+## Danh sách bài tập
 
-Tách God class `ClubManager` thành các thành phần nhỏ, phụ thuộc qua interface (SRP, OCP, DIP, ISP). Phân tích chi tiết các vi phạm nằm ở `docs/solid-analysis.md` trên nhánh Ch02.
+| Chương | Chủ đề | Nhánh | Pull Request |
+|--------|--------|-------|--------------|
+| Ch01 | Phân tích yêu cầu và domain modeling EduHub (user story, sơ đồ lớp, 5 domain class, console demo) | [`ch01/0024418698`](https://github.com/LeeLamm12/PTPMHDT-IN421107-DHCNTT24A-IT/tree/ch01/0024418698) | [#1](https://github.com/LeeLamm12/PTPMHDT-IN421107-DHCNTT24A-IT/pull/1) |
+| Ch02 | Refactor theo SOLID và design pattern (Factory, Decorator, Strategy, Observer) | [`feature/solid-refactor`](https://github.com/LeeLamm12/PTPMHDT-IN421107-DHCNTT24A-IT/tree/feature/solid-refactor) | [#3](https://github.com/LeeLamm12/PTPMHDT-IN421107-DHCNTT24A-IT/pull/3) |
 
-| Pattern | Áp dụng |
-|---------|---------|
-| Factory | `INotificationServiceFactory` thay chuỗi if/else khi gửi thông báo |
-| Decorator | `LoggingClubRepository` bọc `IClubRepository` để ghi log |
-| Strategy | `IReportStrategy` (`ConsoleReportStrategy`, `CsvReportStrategy`) |
-| Observer | `IEventObserver` (`LogNotifier`, `EmailNotifier`) khi tạo sự kiện |
+## Cách xem bài của từng chương
 
-### Cấu trúc thư mục (nhánh Ch02)
+1. Bấm nút chọn nhánh ở góc trên bên trái trang Code (đang ghi `main`).
+2. Chọn nhánh của chương cần xem, hoặc bấm vào tên nhánh trong bảng trên.
+3. Mô tả chi tiết, cách chạy và kết quả của từng chương nằm trong README và thư mục `docs/` trên nhánh đó.
 
-```
-Ch02.Refactor/
-  Domain/          Club, Event, Member
-  Logging/         IAppLogger, ConsoleLogger, FileLogger
-  Notifications/   INotificationService, các kênh Email/SMS/Slack, Factory
-  Repositories/    IClubRepository, IMemberRepository, IEventRepository, bản InMemory, Decorator
-  Services/        ClubService, EventService, ReportService
-  Reports/         IReportStrategy và các strategy
-  Observers/       IEventObserver và các observer
-  Program.cs       Composition root
-Ch02.Refactor.Tests/   Unit test theo mẫu AAA
-docs/                  solid-analysis.md
-```
+## Công nghệ
 
-### Chạy thử
-
-Chuyển sang nhánh `ch02/0024418698`, cần .NET SDK 10:
-
-```
-dotnet build Ch02.Refactor.sln
-dotnet test Ch02.Refactor.sln
-dotnet run --project Ch02.Refactor
-```
-
-Kết quả test: 12 test đều qua.
+C# trên .NET 10 (Console Application), kiểm thử bằng xUnit.
